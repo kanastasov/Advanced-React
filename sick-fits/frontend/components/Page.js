@@ -5,7 +5,7 @@ import Meta from './Meta';
 
 const MyButton = styled.button`
   background: red;
-  font-size: 100px;
+  font-size: ${(props) => (props.huge ? '100px' : '50px')};
   span {
     font-size: 100px;
   }
@@ -17,9 +17,14 @@ class Page extends Component {
       <div>
         <Meta />
         <Header />
-        <MyButton>
+        <MyButton huge>
           Click me
           <span> toot </span>
+        </MyButton>
+
+        <MyButton>
+          Click me2
+          <span> toot2 </span>
         </MyButton>
         {this.props.children}
       </div>
